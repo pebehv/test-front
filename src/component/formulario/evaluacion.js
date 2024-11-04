@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
+import Menu from '../menu/menu';
+
+
 
 function Evaluacion() {
   const [show, setShow] = useState(false);
@@ -30,33 +34,41 @@ function Evaluacion() {
   };
 
   const users = [
-    { id: 1, NameEval: 'Mark', Type: 'Otto', Enabled: '@mdo' },
-    { id: 2, NameEval: 'Jacob', Type: 'Thornton', Enabled: '@fat' },
-    { id: 3, NameEval: 'Larry', Type: 'Bird', Enabled: '@twitter' },
+    { id: 1, NameEval: 'Evaluacion1', Type: 't1', Enabled: 'Si' },
+    { id: 2, NameEval: 'Evaluacion2', Type: 't2', Enabled: 'No' },
+    { id: 3, NameEval: 'Evaluacion3', Type: 't3', Enabled: 'Si' },
   ];
 
   return (
-    <div>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Enabled</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.id} onClick={() => handleShow(user)}>
-              <td>{user.id}</td>
-              <td>{user.NameEval}</td>
-              <td>{user.Type}</td>
-              <td>{user.Enabled}</td>
+    <div style={{ margin: '5%' }}>
+      <Menu/>
+      <Card >
+
+        <div className="card-header">
+          <h1>Evaluaciones</h1>
+        </div>
+        
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Evaluacion</th>
+              <th>Type</th>
+              <th>Habilitado</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <tr key={user.id} onClick={() => handleShow(user)}>
+                <td>{user.id}</td>
+                <td>{user.NameEval}</td>
+                <td>{user.Type}</td>
+                <td>{user.Enabled}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </Card>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
