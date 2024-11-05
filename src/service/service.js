@@ -39,7 +39,7 @@ const MiComponente = () => {
   );*/
   return (
     <div>
-      <h2>Datos Cargados</h2>
+    
  
     </div>
   );
