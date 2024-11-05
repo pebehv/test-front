@@ -34,9 +34,9 @@ const Formulario = () => {
           />
         </Form.Group>
       ))}
-      <Button variant="primary" onClick={handleAddInput}>
+      <Button variant="primary" onClick={handleAddInput} style={{ width: '20%', marginLeft: '80%' }}>
         Agregar Pregunta     </Button>
-      <Button variant="success" type="submit">
+      <Button variant="success" type="submit" style={{ width: '20%', marginLeft: '80%' }}>
         Enviar
       </Button>
     </Form>

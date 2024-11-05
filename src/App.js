@@ -1,29 +1,24 @@
-// frontend/src/App.js
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './component/login/login';
+import Menu from './component/menu/menu';
+import Dashboard from './component/dashboard/dashbord';
+//import Formulario from './component/formulario/formulario';
+import Evaluacion from './component/formulario/evaluacion';
 
-const App = () => {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/api/data');
-        setData(response.data.message);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-    
-    fetchData();
-  }, []);
-
+function App() {
   return (
-    <div>
-      <h1>React and Node.js</h1>
-      {data ? <p>{data}</p> : <p>Loading...</p>}
-    </div>
+    
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/evaluacion" element={<Evaluacion />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
