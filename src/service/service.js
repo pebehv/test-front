@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+//import React, { useEffect, useState } from 'react';
 //import axios from 'axios';
-import axios from '../axiosConfig';
+//import axios from '../axiosConfig';
 
 const MiComponente = () => {
-  const [data] = useState([]);
+  /*const [data] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -34,6 +35,12 @@ const MiComponente = () => {
           <li key={item.id}>{item.name}</li> // Asegúrate de modificar la propiedad según tu API
         ))}
       </ul>
+    </div>
+  );*/
+  return (
+    <div>
+      <h2>Datos Cargados</h2>
+ 
     </div>
   );
 };

@@ -1,13 +1,15 @@
 import React from 'react';
-
-import Grafica from './grafica';
+import Menu from '../menu/menu';
+//import Grafica from './grafica';
 
 function Dashboard() {
   
 
     return (
       <div>
-        <Grafica/>
+        <Menu />
+        hola
+
   
   
       </div>
